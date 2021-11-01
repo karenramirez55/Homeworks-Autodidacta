@@ -1,0 +1,145 @@
+# Homeworks-Autodidacta
+
+function mostrar()
+{
+   /*EJERCICIO 2
+   El dueño de una tienda dedicada a la compra/venta de cartas de Yu-Gi-Oh! desea ingresar en el
+   sistema las ventas realizadas en el dia de la fecha y conocer ciertos datos en base a las cartas
+   que se vendieron.
+   Se ingresara hasta que el usuario decida:
+   * Nombre de la carta.
+   * Tipo de carta: Validar "monstruo", "magica", "trampa".
+   * Rareza: Validar "rara", "super rara", "ultra rara".
+   * Precio: Validar que no sea 0 o negativo.
+   Se pide informar por document.write:
+   A) El nombre y rareza  de la carta tipo "trampa" con mayor precio.
+   
+   B) Cuantas cartas de rareza "ultra rara" y de tipo "magica" o "monstruo" fueron vendidas.
+   
+   C) El promedio de precio de las cartas de por tipo.
+   */
+   
+   
+   let nombreCarta;
+      let tipoCarta;
+      let rareza;
+      let precio;
+      let preguntaComando;
+      let nombreTrampaMayorValor;
+      let acumuladorTrampaMayorValor;
+      let flag;
+      let contadorRara;
+      let contadorSuperRara;
+      let contadorUltraRara;
+      let acumuladorPrecioTrampa;
+      let acumuladorPrecioMagica;
+      let acumuladorPrecioMonstruo;
+      let contadorMagica;
+      let contadorMonstruo;
+      let promedioTipoMonstruo=0;
+      let promedioTipoMagica=0;
+      let promedioTipoTrampa=0;
+      let contadorTrampa;
+      
+      promedioTipoMonstruo=0;
+      promedioTipoMagica=0;
+      promedioTipoTrampa=0;
+      contadorTrampa=0;
+      acumuladorPrecioTrampa=0;
+      contadorMagica=0;
+      contadorMonstruo=0;
+      acumuladorPrecioMagica=0;
+      acumuladorPrecioMonstruo=0;
+      contadorUltraRara=0;
+      contadorSuperRara=0;
+      contadorRara=0;
+      preguntaComando="si";
+      flag=0;
+      acumuladorTrampaMayorValor=0;
+      
+            do
+            {
+              
+                  nombreCarta=prompt(`ingrese Nombre de la carta`);
+                  tipoCarta=prompt(`Tipo de carta: "Monstruo" , "Magica" o "Trampa"`);
+                  while(tipoCarta!="Monstruo" && tipoCarta!="Magica" && tipoCarta!="Trampa")
+                  {  
+                     alert(`Tipo de carta invalido REINGRESE el tipo de carta:`);
+                     tipoCarta=prompt(`Tipo de carta: "Monstruo" , "Magica" o "Trampa"`);
+                  }
+                  rareza=prompt(`Ingrese Rareza: "Ultra rara", "Rara", "Super rara"`);
+                  while(rareza!="Ultra rara" && rareza!="Rara" && rareza!="Super rara")
+                  {  
+                     alert(`Rareza inexistente REINGRESE rareza:`);
+                     rareza=prompt(`Ingrese Rareza: "Ultra rara", "rara", "super rara"`);
+                  }
+                  precio=prompt(`Ingrese precio`);
+                  precio=parseInt(precio);
+                  while(precio<1)
+                  {
+                     alert(`Precio inexistente, reingrese precio`);
+                     precio=prompt(`Ingrese precio`);
+                     precio=parseInt(precio);
+                  }
+      
+                  if(tipoCarta=="Trampa")
+                  {
+                     if(flag==0 || precio>acumuladorTrampaMayorValor)
+                     {
+                        nombreTrampaMayorValor=nombreCarta;
+                        acumuladorTrampaMayorValor=precio;
+                        flag=1;
+                     }
+                     
+                  }
+                  switch(rareza)
+                  {
+                     case "Rara":
+                        contadorRara++;
+                        break;
+                        case "Super rara":
+                           contadorSuperRara++;
+                           break;
+                           case "Ultra rara":
+                              contadorUltraRara++;
+                              break;
+                  }
+                  switch(tipoCarta)
+                  {
+                     case "Magica":
+                        acumuladorPrecioMagica=acumuladorPrecioMagica+precio;
+                        contadorMagica++;
+                        break;
+                     case "Monstruo":
+                        acumuladorPrecioMonstruo=acumuladorPrecioMonstruo+precio;
+                        contadorMonstruo++;
+                        break;
+                     case "Trampa":
+                        acumuladorPrecioTrampa=acumuladorPrecioTrampa+precio;
+                        contadorTrampa++;
+                        break;
+                  }
+                  preguntaComando=prompt(`Desea seguir ingresando cartas "si" o "no"`);
+            }
+            while(preguntaComando=="si");
+            promedioTipoMonstruo=acumuladorPrecioMonstruo/contadorMonstruo;
+            promedioTipoMagica=acumuladorPrecioMagica/contadorMagica; 
+            promedioTipoTrampa=acumuladorPrecioTrampa/contadorTrampa;
+            
+      
+      
+      
+            //A) El nombre y rareza  de la carta tipo "trampa" con mayor precio.
+            alert(`El precio de la carta tipo trampa de mas valor es : ${acumuladorTrampaMayorValor}
+            y su nombre es ${nombreTrampaMayorValor}`);
+            //B) Cuantas cartas de rareza "ultra rara" y de tipo "magica" o "monstruo" fueron vendidas.
+            alert(`La cantidad de cartas tipo ultra rara vendidas fueron: ${contadorUltraRara}
+            la cantidad de tipo magica vendidas: ${contadorMagica}
+            La cantidad de tipo Monstruo vendidas fue: ${contadorMonstruo}`);
+            //C) El promedio de precio de las cartas de por tipo.
+            alert(`El promedio de precio tipo monstruo: ${promedioTipoMonstruo}
+            El promedio de precio tipo magica: ${promedioTipoMagica}
+            El promedio de precio tipo Trampa: ${promedioTipoTrampa}`);
+      
+     
+}
