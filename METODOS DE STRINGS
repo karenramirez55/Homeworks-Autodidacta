@@ -1,0 +1,159 @@
+# Homeworks-Autodidacta
+
+function mostrar()
+{
+ 
+   //METODOS DE CADENA.(METODOS DE STRINGS)
+
+   //1) USO DE .concat() se puede usar para combinar arrays, strings, numbers lo que sea. Lo que hace .concat es añadir/combinar lo que le asignemos.
+    //concat solo sirve para mezclar numbers o string si es un ARRAY si no es array, solo se pueden combinar strings.
+   let cadena1=[]
+    let cadena2=[]
+    let cadena3=[]
+    let frase;
+    cadena1=[1,2,3];
+    cadena2=`Banana`,`Pera`,`Frutilla`;
+    cadena3=[4,5,6];
+    frase= cadena1.concat(cadena2,cadena3); //aca : "()" va lo que queremos que se concatene con nuestra cadena1 que es un ARRAY en este ejemplo.
+    alert(frase); // y aca nos muestra el resultado final. Concat junta 2 o mas cadenas y retorna una nueva.
+
+    //2 uso de STARTSWITH()
+    // startsWith() se usa de la misma manera que .Concat pero su uso es distinto sirve solo para STRINGS no para numbers.
+    //Nos sirve para saber si una cadena de texto empieza igual que la otra cadena de texto ya sea la primer letra/primer palabra/primeras 2 letras ETC. y nos indicara esto con TRUE or False.
+    let cadena;
+    let cadena4;
+    let resultado;
+    cadena4=`H`;
+    cadena=`Hola Probando startsWith`; 
+    resultado= cadena.startsWith(cadena4); //en este caso nos devuelve true porque cadena empieza con la misma letra que cadena4
+    alert(resultado);
+
+    //3) Uso de endsWith() solo sirve para Strings,
+
+    let cadena5;
+    let cadena6;
+    let mensajeParaEnds;
+    cadena5=`cadena de prueba`;
+    cadena6=`ba`; 
+    mensajeParaEnds= cadena5.endsWith(cadena6); //En este caso nos devuelve true porque lo que dice en la cadena 5 es con lo que finaliza la cadena 6
+    alert(mensajeParaEnds);
+
+    //4) .includes() includes devuelve true si encuentra una cadena sin importar su orden.
+    
+    let cadena7;
+    let cadena8;
+    let mensajeParaIncludes;
+    cadena7=`Probando el metodo includes`;
+    cadena8=`includes`;  //TRUE porque cadena 7 includes lo que tiene cadena 8.
+    mensajeParaIncludes=cadena7.includes(cadena8);
+    alert(mensajeParaIncludes);
+
+    //5) .indexOf sirve para saber en que posicion numerica esta el indice osea la primer letra de la palabra que estamos buscando/comparando.
+    //si la palabra buscada no existe, nos devolvera la posicion -1 porque esa posicion numerica no existe.
+    let cadena9;
+    let cadena10;
+    let mensajeParaIndexOf;
+    cadena9=`Probando el metodo index of index of`;
+    cadena10=`index of`;  //index of "index of" position 19 nineteen. si es false y no incluye la palabra nos devolvera -1 que es una posicion que no existe.
+    mensajeParaIndexOf=cadena9.indexOf(cadena10);
+    alert(mensajeParaIndexOf);
+    //ADICIONAL NEW WORDS: "INDEX" (INDICE) AND "INCLUDES" (INCLUYE). PADDING(RELLENO) "SPLITE"(SEPARAR) "UPPER CASE"(MAYUSCULA) "LOWER CASE"(MINUSCULA) "TRIM"(PODAR) "TESTING"(PROBANDO)
+    
+    //6)lastIndexOff lo que hace esta funcion metodo es que nos retorna el ultimo indice de la palabra que estemos buscando , por ejemplo en casos que este repetida
+    // si tenemos varias veces la misma palabra nos devolvera el ultimo indice de la ultima palabra.Distinto a index of que nos devuelve el primer indice de la primer palabra por mas que este repetida
+     let cadena11;
+     let cadena12;
+     let mensajeParaLastIndexOf;
+     cadena11=`probando el metodo lastIndexOf lastIndexOf`;
+     cadena12=`lastIndexOf`; 
+     mensajeParaLastIndexOf=cadena11.lastIndexOf(cadena12);
+     alert(mensajeParaLastIndexOf);
+
+     //7) padStart (no es del standard oficial de JS) lo que hace este metodo es rellenar con la cantidad de caracteres que le voy a indicar y con la palabra o numero que le indique
+     //Si le indico 10 lugares con la letra I y en mi variable tengo solo 3 letras rellenara con lo que le indico hasta completar esos 10 lugares.
+      //Si es padStart significa que rellenara al principio con lo que le indique en mi metodo()
+      
+     let cadena13;
+     let mensajeParaPadStart;
+     cadena13=`ABC`;
+     mensajeParaPadStart=cadena13.padStart(12,`abc`); //abc es con lo que va a empezar y finalizara con ABC.
+     alert(mensajeParaPadStart);
+
+     //8) padEnd: Se usa como relleno tmb pero lo que vaya en nuestro metodo sera con lo que finalice el relleno, empezara con lo que tenga la variable y rellenara con el metodo al final.
+     let cadena14;
+     let mensajeParaPadEnd;
+     cadena14=`123`;
+     mensajeParaPadEnd=cadena14.padEnd(15,`abcdef`);
+     alert(mensajeParaPadEnd);
+
+     //9)metodo REPEAT: aqui le indicamos en nuestro metodo cuantas veces queremos que repita lo que vale nuestra variable `cadena15`
+     let cadena15;
+     let mensajeParaRepeat;
+     cadena15=`Karen `;
+     mensajeParaRepeat=cadena15.repeat(4); //aca nos va a repetir karen `4` veces, quedara: Karen Karen Karen Karen
+     alert(mensajeParaRepeat);
+
+     //10) Metodo SPLIT nos devuelve un ARRAY y es un metodo que sirve para separar.
+     let cadena16;
+     let mensajeParaSplit;
+     cadena16="hola Karen como estas?";
+      mensajeParaSplit=cadena16.split(" "); //Aca le digo que me separe como array todo lo que tenga espacio nos quedara hola,karen,como,estas?
+      //si yo pongo esto ("") sin espacio me va a devolver un array pero cada letra separada ejemplo: h,o,l,a etc.
+      //Y si pongo esto: ("como") me elimina la palabra "como" y me devuelve un array de lo que esta de un lado de la palabra "como" y del otro, quedando: hola karen ,estas?
+      alert(mensajeParaSplit);
+      
+      //11)substring(0,2) primer parametro es donde empieza y el segundo parametro es donde termina.
+      let cadena17;
+      let mensajeParaSubstring;
+      cadena17=`ABCDEFG`;
+      mensajeParaSubstring=cadena17.substring(0,2); //aca solo me muestra AB porque el 0 indica la primer posicion que en este caso es `A` y el 2 hasta donde finaliza
+      //que en este caso es la letra C y no es inclusive hasta la C. digamos que en la posicion 2 se corta sin mostrar esa posicion.
+      alert(mensajeParaSubstring);
+      
+      //12)tolowerCase devuelve nuestro string a minusculas.
+      let cadena18;
+      let mensajeParaTolowerCase;
+      cadena18=`ABCDEFGHIJK`;//aca esta en mayusculas
+      mensajeParaTolowerCase=cadena18.toLowerCase(); //y aca me devuelve a minusculas
+      alert(mensajeParaTolowerCase);
+
+      //13)toUpperCase devuelve nuestro string a mayusculas.
+      let cadena19;
+      let mensajeParaToUpperCase;
+      cadena19=`Hola Karen`; //aca predominan las minusculas
+      mensajeParaToUpperCase=cadena19.toUpperCase();//y aca nos devuelve todo a mayusculas.
+      alert(mensajeParaToUpperCase);
+      
+      //14)toString esto convierte lo que le pasemos a string, ejemplo si tengo un array  me lo devuelve a string.
+      let cadena20;
+      let mensajeParaToString;
+      cadena20=[`Carla, Karen, Cordoba`];//En este caso tengo un array
+      mensajeParaToString=cadena20.toString();//Con toString lo converti a string
+      alert(mensajeParaToString[0]);//aca lo puedo corroborar porque en la posicion 0 en vez de devolverme `Carla` me devuelve `C` como lo seria un string de texto.
+
+      //15) TRIM `poda` los espacios "basura" que no estoy utilizando
+      let cadena21;
+      let mensajeParaTrim;
+      cadena21=`   Testing trim    `;//ACA hay 19 espacios
+      mensajeParaTrim=cadena21.trim();//pero con trim solo me cuenta 12 que es lo que utiliza el texto `testing trim` porque se ocupa de sacarme los espacios que no uso.
+      alert(mensajeParaTrim.length);//aca lo que hace .lenght es mostrar la cantidad de posiciones que estoy utilizando, en este caso como usamos trim nos mostrara 12 posiciones.
+
+      //16)trimStart `poda` los espacios "basura" que no estoy utilizando PERO DEL PRINCIPIO solamente.
+      let cadena22;
+      let mensajeParaTrimStart;
+      cadena22=`   Hola wei   `;
+      mensajeParaTrimStart=cadena22.trimStart();
+      alert(mensajeParaTrimStart.length);
+
+      //19) trimEnd `poda` los espacios "basura" que no estoy utilizando PERO DEL FINAL solamente.
+      let cadena23;
+      let mensajeParaTrimEnd;
+      cadena23=`   Hola mandril    `;
+      mensajeParaTrimEnd=cadena23.trimEnd();
+      alert(mensajeParaTrimEnd.length);
+     
+
+
+      
+     
+}
