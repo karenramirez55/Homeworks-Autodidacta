@@ -1,1 +1,85 @@
 # Homeworks-Autodidacta
+
+//EJERCICIO 1) METODOS DE ARRAY Y CADENA. Realizar funciones para una calculadora que tenga: SUMA-RESTA-MULTIPLICACION-DIVISION-RAIZ CUADRADA-RAIZ CUBICA Y POTENCIACION.
+/*
+let pregunta;
+let resultado;
+let numero1;
+let numero2;
+let suma;
+let resta;
+let division;
+let raizCuadrada;
+let potenciacion;
+let raizCubica;
+
+suma= (num1,num2)=>
+{ 
+   return parseInt(num1)+parseInt(num2);
+}
+
+resta=(num1,num2)=>
+{
+   return parseInt(num1)-parseInt(num2);
+}
+function multiplicacion(num1,num2) //PARA ESTE TIPO DE FUNCIONES NO TIENE QUE ESTAR DECLARADA EL NOMBRE DE LA FUNCION.
+{
+   return parseInt(num1)*parseInt(num2);
+}
+division=(num1,num2)=>
+{
+   return parseInt(num1)/parseInt(num2);
+}
+potenciacion=(num1,num2)=>
+{
+   return parseInt(num1)**parseInt(num2);
+}
+raizCuadrada=(num1)=>
+{
+   num1=parseInt(num1);
+   return Math.sqrt(num1);
+}
+raizCubica=(num1)=>
+{
+   num1=parseInt(num1);
+   return Math.cbrt(num1);
+}
+
+pregunta=prompt(`Que operacion desea hacer?: 1)SUMA 2)RESTA 3)MULTIPLICACION 4)DIVISION  5)POTENCIACION 6)RAIZ CUADRADA 7)RAIZ CUBICA`);
+//alert(pregunta=="" ? `ERROR REINGRESE ALGO CORRECTO` : `Bienvenido a nuestra calculadora`);
+if(pregunta=="1" || pregunta=="2" || pregunta=="3" || pregunta=="4" || pregunta=="5")
+{
+   numero1=prompt("ingrese primer numero para operar");
+   numero2=prompt("ingrese segundo numero para operar");
+}
+else
+{
+   numero1=prompt("ingrese numero para operar");
+}
+
+switch(pregunta)
+{
+   case "1":
+      resultado=suma(numero1,numero2);
+      break; 
+      case "2":
+         resultado=resta(numero1,numero2);
+         break;
+         case "3":
+            resultado=multiplicacion(numero1,numero2);
+            break;
+            case "4":
+               resultado=division(numero1,numero2);
+               break;
+               case "5":
+                  resultado=potenciacion(numero1,numero2);
+               break;
+               case "6":
+                  resultado=raizCuadrada(numero1);
+                  break;
+                  case "7":
+                     resultado=raizCubica(numero1);
+                     break;
+
+}
+alert(`El resultado es: ${resultado}`);  */
