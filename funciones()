@@ -1,0 +1,29 @@
+# Homeworks-Autodidacta
+
+//HOMEWORK: Crear FUNCION que al pasarle como parametro la materia, nos devuelva a)profesor asignado b)el nombre de todos los alumnos
+
+let universidad;
+let informacionAcademica;
+let preguntaDeMaterias;
+let profesor;
+let usandoShitf;
+let materias;
+
+universidad=(auxMaterias)=>
+{ 
+   materias=
+   {
+      programacion:[`Karen`,`Maria`,`Maria Pia`,`Lucas`],
+      laboratorio:[`Carla`,`joaquin`,`Manuel`,`Lucas`,`Trovatoskis`],
+      matematica:[`Roberto`,`Gaston`,`Juan`,`Martin`,`Lucas`,`Nuria`],
+      ingles:[`Roberta`,`Carlos`,`Katrina`,`Lucas` ,`Marhia`,`Leandro`]
+      
+   }
+   return materias[auxMaterias]; //aca en los arrays nos quedan los nombres de todos los alumnos y los profes.
+}
+preguntaDeMaterias=prompt(`Que materia desea buscar: "programacion","laboratorio","matematica","ingles"`);
+informacionAcademica=universidad(preguntaDeMaterias);
+profesor=universidad(preguntaDeMaterias)[0]; //aca le digo que en cada array en sus primeras posiciones estan los nombres de los profesor@s
+alert(`La materia es ${preguntaDeMaterias} Y su profesor/a es: ${profesor}`);
+usandoShitf=`Alumnos presentes en la materia ${preguntaDeMaterias} son: ${informacionAcademica.shift()}`; //aca le borro con .shift la primer posicion osea los profes para que me muestre solo los nombres de los alumnos
+alert(`Alumnos presentes en la materia ${preguntaDeMaterias} son: ${informacionAcademica}`); 
