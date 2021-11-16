@@ -1,0 +1,27 @@
+# Homeworks-Autodidacta
+//HOMEWORK: Crear FUNCION que al pasarle como parametro la materia, nos devuelva:
+//A)profesor asignado B)el nombre de todos los alumnos.
+let profesor;
+let alumnos;
+let resultado;
+let informacion;
+let ingreseMateria;
+ingreseMateria=prompt(`ingrese materias: programacion, laboratorio,matematica o ingles`);
+universidad=(auxiliar)=>
+{ 
+   materias=
+   {
+      programacion:[`Karen`,`Maria`,`Maria Pia`,`Lucas`],
+      laboratorio:[`Carla`,`joaquin`,`Manuel`,`Lucas`,`Trovatoskis`],
+      matematica:[`Roberto`,`Gaston`,`Juan`,`Martin`,`Lucas`,`Nuria`],
+      ingles:[`Roberta`,`Carlos`,`Katrina`,`Lucas` ,`Marhia`,`Leandro`]
+      
+   }
+   
+   return materias[auxiliar]; //aca en los arrays nos quedan los nombres de todos los alumnos y los profes.
+}
+
+informacion=universidad(ingreseMateria);
+profesor=informacion[0]; //aca le digo que en la posicion 0 me guarde a los profes.
+alumnos=informacion.shift(); //aca le borro la posicion 0 del array
+resultado=console.log(`La materia es ${ingreseMateria} los alumnos son ${informacion} y el profes@r asignado es: ${profesor}`)
