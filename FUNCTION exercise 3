@@ -1,0 +1,20 @@
+# Homeworks-Autodidacta
+//SEGUIMOS REUSANDO LA FUNCION DEL EJERCICIO UNO (UNIVERSIDAD)
+//Ejercicio 3) crear una funcion para preguntarle a pepe en que materia se quiere inscribir - si ya hay 20 alumnos negarle la inscripcion- si hay menos de 20 inscribirlo y agregarlo a la lista de alumnos.
+
+inscripcion=(auxIngresandoMateria,auxIngreseSuName)=>{
+let usandoFunction=universidad(auxIngresandoMateria);
+if (usandoFunction.length>=14) {
+   return `Lo siento ${auxIngreseSuName} el cupo para ${auxIngresandoMateria} esta lleno`;
+}
+else{
+   //agregarlo a la  lista de alumnos
+  usandoFunction.shift([0]);//ACA SACO A LOS PROFES
+   usandoFunction.push(ingreseSuName);//ACA AGREGO AL NUEVO ALUMNO
+   return `${auxIngreseSuName} fuiste inscripto con exito los alumnos son: ${usandoFunction}  la materia es ${auxIngresandoMateria} `;
+   }
+}
+ingresandoMateria=prompt(`En que materia desea inscribirse?`);
+ingreseSuName= prompt(`Ingrese SU name`);
+console.log(inscripcion(ingresandoMateria,ingreseSuName));
+//COMO hago para poder inscribir para SIEMPRE a los alumnos en el ARRAY????
