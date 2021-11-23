@@ -1,0 +1,77 @@
+# Homeworks-Autodidacta
+
+
+//EJERCICIO 1) Crear funcion que al pasarle como parametro la materia nos devuelva: "profesor@ asignado y el nomb de todos los alumnos"
+
+let profesor;
+let alumnos;
+let resultado;
+let informacion;
+let ingreseMateria;
+ingreseMateria=prompt(`ingrese materias: programacion, laboratorio,matematica o ingles`);
+universidad=(auxiliar)=>
+{ 
+   materias=
+   {
+      programacion:[`Karen`,`Maria`,`Maria Pia`,`Lucas`],
+      laboratorio:[`Carla`,`joaquin`,`Manuel`,`Lucas`,`Trovatoskis`],
+      matematica:[`Roberto`,`Gaston`,`Juan`,`Martin`,`Lucas`,`Nuria`],
+      ingles:[`Roberta`,`Carlos`,`Katrina`,`Lucas` ,`Marhia`,`Leandro`]
+      
+   }
+   return auxiliar!= undefined && auxiliar !=null && auxiliar != " " ? materias[auxiliar] : materias;
+   //materias[] nos retorna todos los nombres de los alumns pero no el de las materias aun asi guarda una posicion para su materia y materias nos retorna tmb los alumnos pero se guarda como valor tmb el de las materias por eso tuve que dividirlos como KEY and VALUE
+}
+
+informacion=universidad(ingreseMateria);
+profesor=informacion[0]; //aca le digo que en la posicion 0 me guarde a los profes.
+alumnos=informacion.shift(); //aca le borro la posicion 0 del array
+resultado=console.log(`La materia es ${ingreseMateria} los alumnos son ${informacion} y el profes@r asignado es: ${profesor}`)
+
+//EJERCICO 2) Crear funcion que nos diga en cuantas clases esta X alumno y nombrar las clases en las que esta y los profes de cada una
+ingreseNombre=prompt(`Enter name`);
+cantidadDeClases=(auxName)=>
+
+{
+    let contador = 0;
+    let profesores=[];
+    let clasesTotales = []; //  
+   let reusandoUniversidad=universidad();
+
+   for (info in reusandoUniversidad){
+      if (reusandoUniversidad[info].includes(ingreseNombre)) {
+         contador++;
+         clasesTotales.push(' ' + info); //INFO TIENE el nombre de cada clase
+      }
+   }
+   Object.entries(universidad()).forEach(([k,v])=> //el object.entries se divide en key y value y el forEach me recorre toda la "K" y por separado todo "value"
+   {
+      profesores.push(v[0]);//aca le digo que me vaya agregando todo lo que esta en la posicion 0 de V que son los que asigne como profesores.
+   })
+   return `cantidad total de clases en la que estas anotado: ${contador} y las clases son: ${clasesTotales} el alumn@ se llama ${auxName} y los profesores son: ${profesores}`;
+}
+console.log(cantidadDeClases(ingreseNombre));
+
+//Ejercicio 3) crear una funcion para preguntarle a pepe en que materia se quiere inscribir - si ya hay 20 alumnos negarle la inscripcion- si hay menos de 20 inscribirlo y agregarlo a la lista de alumnos.
+
+inscripcion=(auxIngresandoMateria,auxIngreseSuName)=>{
+let usandoFunction=universidad(auxIngresandoMateria);
+if (usandoFunction.length>=14) {
+   return `Lo siento ${auxIngreseSuName} el cupo para ${auxIngresandoMateria} esta lleno`;
+}
+else{
+   //agregarlo a la  lista de alumnos
+  usandoFunction.shift([0]);//ACA SACO A LOS PROFES
+   usandoFunction.push(ingreseSuName);//ACA AGREGO AL NUEVO ALUMNO
+   return `${auxIngreseSuName} fuiste inscripto con exito los alumnos son: ${usandoFunction}  la materia es ${auxIngresandoMateria} `;
+   }
+   
+}
+
+ingresandoMateria=prompt(`En que materia desea inscribirse?`);
+ingreseSuName= prompt(`Ingrese SU name`);
+console.log(inscripcion(ingresandoMateria,ingreseSuName));
+//COMO hago para poder inscribir para SIEMPRE a los alumnos en el ARRAY????
+
+}
+
