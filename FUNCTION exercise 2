@@ -1,0 +1,25 @@
+# Homeworks-Autodidacta
+//ACA REUSO LA FUNCION UNIVERSIDAD QUE ES LA QUE ESTA EN EL PRIMER EJERCICIO
+//EJERCICO 2) Crear funcion que nos diga en cuantas clases esta X alumno y nombrar las clases en las que esta y los profes de cada una.
+ingreseNombre=prompt(`Enter name`);
+cantidadDeClases=(auxName)=>
+
+{
+    let contador = 0;
+    let profesores=[];
+    let clasesTotales = []; //  
+   let reusandoUniversidad=universidad();
+
+   for (info in reusandoUniversidad){
+      if (reusandoUniversidad[info].includes(ingreseNombre)) {
+         contador++;
+         clasesTotales.push(' ' + info); //INFO TIENE el nombre de cada clase
+      }
+   }
+   Object.entries(universidad()).forEach(([k,v])=> //el object.entries se divide en key y value y el forEach me recorre toda la "K" y por separado todo "value"
+   {
+      profesores.push(v[0]);//aca le digo que me vaya agregando todo lo que esta en la posicion 0 de V que son los que asigne como profesores.
+   })
+   return `cantidad total de clases en la que estas anotado: ${contador} y las clases son: ${clasesTotales} el alumn@ se llama ${auxName} y los profesores son: ${profesores}`;
+}
+console.log(cantidadDeClases(ingreseNombre));
