@@ -1,0 +1,51 @@
+# Homeworks-Autodidacta
+ 
+ //EJERCICIO: para que cofla apruebe necesita: contar con el 95% de asistencias,el promedio por materia debe ser 7/10,y el 75%de tps aprobados.
+ //Solicitar los datos y decirle si aprueba o no, mostrar todo con colores representativos en consola y esto estructurado como tabla.
+const materias=
+{
+    quimica:[190,7,3,"quimica"],
+    matematica:[85,8,2,"matematica"],
+    programacion:[100,6,3,"programacion"],
+    laboratorio:[105,7,2,"laboratorio"]
+}
+
+aprobacionAlumno=()=> //SIEMPRE RECORDAR QUE AL ARRAY SE LO RECORRE.
+{
+    for(info in materias){
+        let asistencias=materias[info][0]; 
+        let promedio=materias[info][1];
+        let porcentajeTps=materias[info][2];
+        //info tiene cada posicion del array de todos los valores, [0] contiene el index 0 de cada materia.
+        if(asistencias>=95){ //entonces que en cada index 0 si es mayor o igual a 95 que diga que aprobo
+             
+            console.log(`${materias[info][3]} :`); //aca en la posicion 3 esta el nombre de la materia
+            console.log("%cExcelente cumpliste con el 95% de asistencias","color:green");
+            
+        }
+        else
+        {   console.log(`${materias[info][3]} :`); //al hacer 2 console me queda estructurado como tabla uno abajo del otro.
+            console.log("%cNo cumpliste con el 95% de asistencias","color: red"); //aca en la posicion 3 esta el nombre de la materia
+        }
+        if (promedio>=7) {
+            console.log(`${materias[info][3]}:`);
+            console.log("%cExcelente cumpliste con el promedio requerido","color:green")
+        }
+        else
+        {
+            console.log(`${materias[info][3]}:`);
+            console.log("%cNO cumpliste con el promedio requerido","color:red")
+        }
+        if (porcentajeTps>=3) {
+            console.log(`${materias[info][3]}:`);
+            console.log("%cExcelente cumpliste con el 75% de TPS","color:green")
+        }
+        else
+        {
+            console.log(`${materias[info][3]}:`);
+            console.log("%cNO cumpliste con el 75% de TPS","color:red")
+        }
+    }
+    
+}    
+aprobacionAlumno();
