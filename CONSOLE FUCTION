@@ -1,0 +1,53 @@
+# Homeworks-Autodidacta
+   /*
+//METODOS DE CONSOLA PARA USAR LA CONSOLA F12. asser y dir no las recomienda CODIGO OBSOLETO AVERIGUAR QUE ES.
+
+//1)console.assert (AFIRMAR)
+console.assert(5>10); //Nos sale por consola assertion failed porque es False NO SE USA MAS ACTUALMENTE
+//2)console.clear() limpia la consola de todo lo que este escrito.
+console.clear();
+//3)console.error() aparece un mensaje en ROJO advirtiendo algun ERROR
+console.error(`your code it's okey but have care with empty spaces, thanks`);
+//4)console.info() es similar a console.log a simple vista hacen lo mismo reproducen un mensaje. Info es mas usado para dar un mensaje en particular
+console.info(`Excelent job but some practices are old`);
+//5) console.table() nos devuelve una tabla con el index y el value de cada array, en tal posicion esta este valor y tmb nos dice la lenght del array
+console.table([1,5,10,20]);
+//6)console.warn() war de warning (ADVERTENCIA) aparece un logo traiangular simbolo de advertencia.
+console.warn(`take care in the line 28, thanks`);
+//7)console.dir()nos despliega una lista con todas nuestras posiciones del array y tmb la nueva lenght longitud
+console.dir([1,2,3,5,222]); //NO ES STANDAR DE JS.
+
+//FUNCIONES DE CONTEO 
+
+//8)console.count()  default(DEFECTO);
+suma=(num1,num2)=>
+{
+    num1+num2;
+    console.count();// aca uso console.count para que me diga cuantas veces se ejecuta la function SUMA en este caso 5 veces por default.
+}
+suma(20,25);
+suma(20,25);
+suma(20,25);
+suma(20,25);
+suma(20,25);
+console.countReset(); //9)console.countReset() nos resetea el conteo en donde lo requiramos, desde aca empezara a contar desde 1.
+suma(20,25);
+suma(20,25);
+suma(20,25); //aca sera 3 sino estaria el countReset seria 8.
+
+//FUNCIONES DE AGRUPACION
+
+//10) console.group crea un grupo en el que puedo abrir y cerrarlo y escribir todo lo que quiera pero adentro de ese grupo
+console.group(); //aca se crea un grupo ABIERTO automaticamente, luego yo elijo escribir lo que va adentro, tmb puedo crear child groups dentro de este parent group y ponerle un nombre entre ()
+//11)console.groupEnd() elimina el grupo que elejimos, si escribimos esto en el parent group o en el child group lo eliminamos
+//12)console.groupCollapsed() es lo mismo que console.group() pero console.groupCollapsed() automaticamente crea un grupo cerrado, es la unica diferencia entre ambos.
+
+//   FUNCIONES DE TEMPORIZACION  
+
+//13)console.time(); cuando llamamos la funcion empieza a contar desde ese momento
+console.time(); 
+//14) podemos ver cuanto tiempo va con console.timeLog();
+console.timeLog();
+//15)console.timeEnd(); finaliza el temporizador 
+*/
+//console.log("%cKEY KEY", "color:white;background: black; padding:20px; border: 3px solid yellow");
