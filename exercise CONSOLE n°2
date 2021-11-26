@@ -1,0 +1,35 @@
+# Homeworks-Autodidacta
+//EJERCICIO 2 CONSOLE: dividir las tareas semanalmente de cofla trabaja 8 hs por durante 2 semanas entre las cuales tiene q 24 hs estudiar 24 hacer TPS y Hacer las cosas d la casa
+   //-Organizar las actividades diaramente- hacer por console la organizacion.
+ let estudio;
+ let tps;
+ let housework;
+ let trabajoDiario;
+ let descanso;
+
+ estudio=`102 minutos de estudio por dia`;
+ tps=`102 minutos de TPS por dia`;
+ housework=`35 minutos de tareas de la casa por dia`;
+ trabajoDiario=`480 minutos de Trabajo por dia`;
+ descanso=`15 minutos de descanso por dia`;
+
+for (let i=0; i<14; i++) { //corta en el 14 y cuenta el 0
+    if (i==0) {
+       console.groupCollapsed(`First week`); //aca creo un grupo cerrado que va a continuar teniendo adentro subgrupos con cada dia
+    }
+    console.groupCollapsed(`First week day:${i+1}`); //aca le digo que me agregue una a cada posicion por ejemplo si I vale 0 si le agrego uno va a decir "1"
+     console.log(estudio);
+     console.log(tps);
+     console.log(trabajoDiario);
+     console.log(descanso);
+     console.log(housework);
+     console.groupEnd();//aca cerramos el grupo porque ya tenemos todo listo
+     if (i==6) {
+         console.groupEnd(); //cerramos el parent group que es FIRST WEEK
+        console.groupCollapsed(`Second Week`);
+        console.groupEnd();
+     }
+}
+ 
+console.groupEnd();
+console.groupEnd();
